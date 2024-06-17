@@ -42,10 +42,14 @@ class disposifySignUpForm(SignupForm):
 
     # Override the init method
     def __init__(self, *args, **kwargs):
+        print("im here 1")
         # Call the init of the parent class
         super().__init__(*args, **kwargs)
         # Remove autofocus because it is in the wrong place
-        del self.fields["username"].widget.attrs["autofocus"]
+        try:
+            del self.fields["username"].widget.attrs["autofocus"]
+        except KeyError:
+            pass
 
     # Custom signup logic
     def custom_signup(self, request, user):

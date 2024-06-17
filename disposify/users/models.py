@@ -41,3 +41,8 @@ class Collector(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=500, blank=True)
     price_per_kg = models.FloatField(max_length=50, blank=True)
+    #image = models.ImageField() TODO
+
+    def __str__(self):
+        return self.user.username
+
