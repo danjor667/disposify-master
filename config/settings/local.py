@@ -4,14 +4,14 @@ from .base import env
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = True
+DEBUG = False
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
     default="FfJg2MUkXPDGp1xnlS7s64X9QXSGmllfImhsUTYjfhupc90fX3Qdhuq3r6lXu9RH",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["danjor.pythonanywhere.com"]
+ALLOWED_HOSTS = ["danjor.pythonanywhere.com", "localhost"]
 
 # CACHES
 # ------------------------------------------------------------------------------
@@ -26,9 +26,9 @@ CACHES = {
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-#EMAIL_BACKEND = env(
+# EMAIL_BACKEND = env(
 #     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
-#)
+# )
 
 # settings.py
 

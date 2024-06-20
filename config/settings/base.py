@@ -42,7 +42,6 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-#DATABASES = {"default": env.db("DATABASE_URL", default="postgres:///disposify")}
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -53,9 +52,13 @@ DATABASES = {
         "PORT": "3306",       # MySQL default port
     }
 }
-#DATABASES["default"]["ATOMIC_REQUESTS"] = True
-#DATABASES["default"] = dj_database_url.parse("postgres://disposify_user:DmcAxPjMWAwncjXNiDZbxqf0VTI3SBp2@dpg-cpp8r6eehbks73bthtng-a.oregon-postgres.render.com/disposify")
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": "mydatabase",
+#     }
+# }
 # URLS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
