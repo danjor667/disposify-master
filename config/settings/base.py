@@ -4,6 +4,7 @@ Base settings to build other settings files upon.
 from pathlib import Path
 
 import environ
+import dj_database_url
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # disposify/
@@ -44,11 +45,16 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 #DATABASES = {"default": env.db("DATABASE_URL", default="postgres:///disposify")}
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "danjor$default",
+        "USER": "danjor",
+        "PASSWORD": "mynameisjordan",
+        "HOST": "danjor.mysql.pythonanywhere-services.com",  # Or your MySQL host IP address
+        "PORT": "3306",       # MySQL default port
     }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
+#DATABASES["default"]["ATOMIC_REQUESTS"] = True
+#DATABASES["default"] = dj_database_url.parse("postgres://disposify_user:DmcAxPjMWAwncjXNiDZbxqf0VTI3SBp2@dpg-cpp8r6eehbks73bthtng-a.oregon-postgres.render.com/disposify")
 
 # URLS
 # ------------------------------------------------------------------------------
@@ -84,7 +90,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "theme",
+    "disposify.theme",
     "disposify.users.apps.UsersConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

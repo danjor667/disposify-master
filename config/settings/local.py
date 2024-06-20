@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default="FfJg2MUkXPDGp1xnlS7s64X9QXSGmllfImhsUTYjfhupc90fX3Qdhuq3r6lXu9RH",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["danjor.pythonanywhere.com"]
 
 # CACHES
 # ------------------------------------------------------------------------------
@@ -26,14 +26,13 @@ CACHES = {
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = env(
-     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
-)
+#EMAIL_BACKEND = env(
+#     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
+#)
 
 # settings.py
 
-"""
-for production
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -46,7 +45,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED = False
-"""
 
 
 
